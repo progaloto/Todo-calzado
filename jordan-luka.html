@@ -5,58 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jordan Luka 5 - Todo-Calzado</title>
     <style>
-        body { font-family: sans-serif; margin: 0; padding: 10px; background-color: #f4f4f4; padding-bottom: 80px; }
-        .container { max-width: 450px; margin: auto; background: white; padding: 15px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        body { font-family: sans-serif; margin: 0; padding: 0; background-color: #ffffff; color: #333; }
+        header { text-align: center; padding: 20px; background: #fff; border-bottom: 1px solid #eee; }
+        .container { max-width: 500px; margin: auto; padding: 15px; }
         
-        /* Fotos una debajo de otra */
-        .galeria-fotos img { width: 100%; border-radius: 10px; margin-bottom: 15px; display: block; }
+        /* Fotos grandes una debajo de otra */
+        .fotos-producto img { 
+            width: 100%; 
+            height: auto; 
+            display: block; 
+            margin-bottom: 10px; 
+            border-radius: 5px;
+            background-color: #f0f0f0; /* Color de fondo mientras carga */
+        }
         
-        .info { text-align: center; margin: 20px 0; }
-        .precio { font-size: 30px; font-weight: bold; color: #111; }
-        .pago-entrega { color: #27ae60; font-weight: bold; font-size: 14px; margin-top: 5px; }
+        .info-producto { text-align: center; padding: 20px 0; }
+        .precio { font-size: 32px; font-weight: bold; color: #000; }
+        .envio { color: #27ae60; font-weight: bold; font-size: 16px; margin-bottom: 20px; }
 
-        /* Formulario */
-        input, select { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 16px; }
-        .btn-finalizar { background: #2ecc71; color: white; border: none; width: 100%; padding: 15px; border-radius: 10px; font-weight: bold; font-size: 18px; margin-top: 10px; }
+        /* Formulario Estilo Limpio */
+        .formulario { background: #f9f9f9; padding: 20px; border-radius: 15px; border: 1px solid #eee; }
+        input, select { width: 100%; padding: 15px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 16px; }
+        .btn-pedido { background: #000; color: #fff; border: none; width: 100%; padding: 18px; border-radius: 8px; font-weight: bold; font-size: 18px; cursor: pointer; margin-top: 10px; }
 
-        /* Botón Asesor Flotante */
-        .btn-asesor { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000; display: flex; align-items: center; }
+        /* Botón WhatsApp Flotante */
+        .wpp-flotante { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 15px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 999; display: flex; align-items: center; gap: 8px; }
     </style>
 </head>
 <body>
 
+<header>
+    <h2>👟 TODO-CALZADO</h2>
+</header>
+
 <div class="container">
-    <h2 style="text-align:center">👟 TODO-CALZADO</h2>
-
-    <div class="galeria-fotos">
-        <img src="foto1.jpg" alt="Jordan Luka 5 - Vista 1">
-        <img src="foto2.jpg" alt="Jordan Luka 5 - Vista 2">
-        <img src="foto3.jpg" alt="Jordan Luka 5 - Vista 3">
+    <div class="fotos-producto">
+        <img src="foto1.jpg" alt="Jordan Luka 5 Vista 1">
+        <img src="foto2.jpg" alt="Jordan Luka 5 Vista 2">
+        <img src="foto3.jpg" alt="Jordan Luka 5 Vista 3">
+        <img src="foto4.jpg" alt="Jordan Luka 5 Vista 4">
     </div>
 
-    <div class="info">
-        <h3>JORDAN LUKA 5</h3>
+    <div class="info-producto">
+        <h1>JORDAN LUKA 5</h1>
         <div class="precio">$999.000 COP</div>
-        <div class="pago-entrega">PAGO CONTRA ENTREGA 📦</div>
+        <div class="envio">PAGO CONTRA ENTREGA 📦</div>
     </div>
 
-    <form class="formulario">
-        <h4 style="text-align:center">DATOS DE ENVÍO</h4>
-        <input type="text" placeholder="Nombre completo" required>
-        <input type="text" placeholder="Ciudad y Departamento" required>
-        <input type="text" placeholder="Barrio" required>
-        <input type="text" placeholder="Dirección exacta" required>
-        <input type="tel" placeholder="WhatsApp (10 dígitos)" required>
-        <select required>
-            <option value="">Selecciona tu Talla (US)</option>
-            <option>7</option><option>8</option><option>9</option><option>10</option>
+    <div class="formulario">
+        <h3 style="text-align:center">DATOS DE ENVÍO</h3>
+        <input type="text" placeholder="Nombre y Apellido">
+        <input type="text" placeholder="Ciudad / Municipio">
+        <input type="text" placeholder="Dirección de entrega">
+        <input type="tel" placeholder="WhatsApp">
+        <select>
+            <option>Selecciona tu Talla (US)</option>
+            <option>7</option><option>7.5</option><option>8</option><option>8.5</option>
+            <option>9</option><option>9.5</option><option>10</option>
         </select>
-        <button type="submit" class="btn-finalizar">🚀 PEDIR AHORA</button>
-    </form>
+        <button class="btn-pedido">🚀 FINALIZAR PEDIDO</button>
+    </div>
 </div>
 
-<a href="https://wa.me/573146742585?text=Hola!%20Me%20interesan%20los%20Jordan%20Luka%205%20de%20999.000" class="btn-asesor">
-    💬 Hablar con asesor
+<a href="https://wa.me/573146742585?text=Hola!%20Quiero%20pedir%20los%20Jordan%20Luka%205" class="wpp-flotante">
+    <span>Hablar con asesor</span>
 </a>
 
 </body>
