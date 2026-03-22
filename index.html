@@ -14,57 +14,43 @@
             <p style="color: #666; font-size: 14px;">Medellín - Pago Contra Entrega</p>
         </header>
 
-        <div style="text-align: center; margin: 20px 0;">
-            <h3 style="margin: 10px 0 5px 0;">Medias Locas Stitch (Con Orejitas)</h3>
-            <p style="font-size: 26px; color: #e63946; font-weight: bold; margin: 0;">$28.000 COP</p>
-            <p style="color: #555; font-size: 14px; margin-top: 10px; line-height: 1.5;">
-                ✨ <b>Talla:</b> Única (Para niños de 4 a 11 años)<br>
-                👟 <b>Recomendado:</b> Hasta talla de calzado 35<br>
-                ⚠️ <b>Cuidado:</b> Lavar a mano con agua fría únicamente.
-            </p>
+        <div style="margin: 20px 0; text-align: center;">
+            <img src="1739810304Medias Locas Stitch 17CM031 (4).jpg" style="width: 100%; border-radius: 10px; margin-bottom: 10px; border: 1px solid #ddd;">
+            <img src="1739810304Medias Locas Stitch 17CM031 (2).jpg" style="width: 100%; border-radius: 10px; margin-bottom: 10px; border: 1px solid #ddd;">
+            <img src="1739810304Medias Locas Stitch 17CM031.jpg" style="width: 100%; border-radius: 10px; border: 1px solid #ddd;">
         </div>
 
-        <form id="orderForm">
-            <p style="text-align: center; font-weight: bold; color: #333; margin-bottom: 15px;">DATOS PARA TU ENVÍO:</p>
-            
-            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Nombre de quien recibe:</label>
+        <div style="text-align: center; margin: 20px 0;">
+            <h3 style="margin: 0; color: #007bff;">Medias Locas de Stitch</h3>
+            <p style="font-size: 28px; color: #e63946; font-weight: bold; margin: 10px 0;">$28.000 COP</p>
+            <div style="background: #fff9db; padding: 15px; border-radius: 10px; text-align: left; font-size: 14px; color: #555; line-height: 1.6;">
+                ✨ <b>Talla:</b> Única (4 a 11 años)<br>
+                👟 <b>Ajuste:</b> Hasta talla de calzado 35<br>
+                ⚠️ <b>Cuidado:</b> Lavar a mano únicamente.
+            </div>
+        </div>
+
+        <form id="orderForm" style="background: #fdfdfd; padding: 15px; border-radius: 10px; border: 1px solid #eee;">
+            <p style="text-align: center; font-weight: bold; margin-top: 0;">DATOS DE ENVÍO 🚛</p>
             <input type="text" id="nombre" placeholder="Nombre completo" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
+            <input type="text" id="direccion" placeholder="Dirección y Barrio" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
+            <input type="tel" id="celular" placeholder="Celular" required style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
 
-            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Dirección exacta:</label>
-            <input type="text" id="direccion" placeholder="Calle, Carrera, Barrio" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
-
-            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Ciudad / Municipio:</label>
-            <input type="text" id="ciudad" value="Medellín" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
-
-            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Celular:</label>
-            <input type="tel" id="celular" placeholder="3xx xxx xxxx" required style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
-
-            <button type="button" onclick="enviarPedido()" style="width: 100%; background-color: #25d366; color: white; padding: 16px; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; margin-bottom: 10px;">
-                🚀 HACER PEDIDO AHORA
+            <button type="button" onclick="enviarPedido()" style="width: 100%; background-color: #25d366; color: white; padding: 18px; border: none; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer;">
+                ✅ CONFIRMAR PEDIDO
             </button>
         </form>
-
-        <div style="text-align: center; margin-top: 15px;">
-            <a href="https://wa.me/573146742585?text=Hola!%20Quiero%20más%20información%20sobre%20las%20medias%20de%20Stitch" 
-               style="display: block; background-color: #007bff; color: white; padding: 12px; text-decoration: none; border-radius: 10px; font-weight: bold; font-size: 15px;">
-               💬 CHATEAR CON UN ASESOR
-            </a>
-        </div>
     </div>
 
     <script>
         function enviarPedido() {
             const nombre = document.getElementById('nombre').value;
             const direccion = document.getElementById('direccion').value;
-            const ciudad = document.getElementById('ciudad').value;
             const celular = document.getElementById('celular').value;
-
-            if(nombre && direccion && ciudad && celular) {
-                const mensaje = `¡Nuevo Pedido!%0A%0A🧦 Producto: Medias Stitch%0A👤 Nombre: ${nombre}%0A📍 Dirección: ${direccion}%0A🏙️ Ciudad: ${ciudad}%0A📱 Celular: ${celular}%0A💰 Total: $28.000`;
+            if(nombre && direccion && celular) {
+                const mensaje = `¡Nuevo Pedido!%0A%0A🧦 Medias Stitch%0A👤 Nombre: ${nombre}%0A📍 Dirección: ${direccion}%0A📱 Celular: ${celular}%0A💰 Total: $28.000`;
                 window.location.href = `https://wa.me/573146742585?text=${mensaje}`;
-            } else {
-                alert("Por favor, llena los datos de envío para procesar tu pedido.");
-            }
+            } else { alert("Completa los datos de envío."); }
         }
     </script>
 </body>
