@@ -5,84 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jordan Luka 5 - Todo-Calzado</title>
     <style>
-        body { font-family: sans-serif; margin: 0; background: #fff; color: #333; }
-        .container { max-width: 450px; margin: auto; padding: 15px; }
-        .carrusel { display: flex; overflow-x: auto; snap-type: x mandatory; background: #f9f9f9; }
-        .carrusel img { width: 100%; flex-shrink: 0; snap-align: start; }
-        .info { text-align: center; padding: 15px 0; }
-        .precio-final { font-size: 32px; font-weight: bold; color: #000; }
-        form { background: #f4f4f4; padding: 20px; border-radius: 15px; display: flex; flex-direction: column; gap: 10px; }
-        label { font-size: 13px; font-weight: bold; color: #666; margin-bottom: -5px; }
-        input, select { padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 15px; width: 100%; box-sizing: border-box; }
-        .btn { background: #25D366; color: white; padding: 18px; border: none; border-radius: 8px; font-weight: bold; font-size: 18px; cursor: pointer; margin-top: 10px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 10px; background-color: #f9f9f9; }
+        .container { max-width: 450px; margin: auto; background: white; padding: 15px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        
+        /* Estilos del Carrusel */
+        .carrusel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px; border-radius: 15px; margin-bottom: 15px; }
+        .carrusel img { width: 100%; flex-shrink: 0; scroll-snap-align: start; object-fit: cover; height: 300px; }
+        
+        .info { text-align: center; margin-bottom: 20px; }
+        .precio { font-size: 28px; font-weight: bold; color: #1a1a1a; margin: 5px 0; }
+        .pago { color: #27ae60; font-weight: bold; text-transform: uppercase; font-size: 14px; }
+        
+        /* Estilos del Formulario */
+        input, select { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        .btn-finalizar { background: #2ecc71; color: white; border: none; width: 100%; padding: 15px; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 16px; margin-top: 10px; }
+        
+        /* Botón de WhatsApp Flotante */
+        .btn-whatsapp { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); display: flex; align-items: center; z-index: 100; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2 style="text-align:center;">👟 TODO-CALZADO</h2>
-        
-        <div class="carrusel">
-            <img src="Screenshot_20260322-132704-824.png">
-            <img src="Screenshot_20260322-132718-122.png">
-            <img src="Screenshot_20260322-132739-270.png">
-            <img src="Screenshot_20260322-132800-495.png">
-        </div>
 
-        <div class="info">
-            <h1 style="margin:0; font-size:22px;">JORDAN LUKA 5</h1>
-            <span class="precio-final">$999.000 COP</span>
-            <p style="color:green; font-weight:bold; margin: 5px 0;">PAGO CONTRA ENTREGA</p>
-        </div>
-
-        <form id="orderForm">
-            <h3 style="margin:0 0 10px 0; text-align:center; font-size: 18px;">FORMULARIO DE PEDIDO</h3>
-            
-            <input type="text" id="nombre" placeholder="Nombre completo" required>
-            <input type="text" id="ciudad" placeholder="Ciudad" required>
-            <input type="text" id="barrio" placeholder="Barrio" required>
-            <input type="text" id="dir" placeholder="Dirección exacta" required>
-            <input type="tel" id="tel" placeholder="Teléfono (WhatsApp)" required>
-            <input type="email" id="email" placeholder="Correo electrónico" required>
-            
-            <select id="talla" required>
-                <option value="">Selecciona tu Talla (US)</option>
-                <option value="8.0">8.0 US</option>
-                <option value="8.5">8.5 US</option>
-                <option value="9.0">9.0 US</option>
-                <option value="9.5">9.5 US</option>
-                <option value="10.0">10.0 US</option>
-                <option value="11.0">11.0 US</option>
-            </select>
-
-            <label>¿Para cuándo necesitas los tenis?</label>
-            <input type="date" id="fecha" required>
-
-            <button type="button" class="btn" onclick="enviarPedido()">🚀 FINALIZAR PEDIDO</button>
-        </form>
+<div class="container">
+    <h2 style="text-align:center">👟 TODO-CALZADO</h2>
+    
+    <div class="carrusel">
+        <img src="https://via.placeholder.com/400x300?text=Foto+1" alt="Jordan 1">
+        <img src="https://via.placeholder.com/400x300?text=Foto+2" alt="Jordan 2">
+        <img src="https://via.placeholder.com/400x300?text=Foto+3" alt="Jordan 3">
     </div>
 
-    <script>
-        function enviarPedido() {
-            const campos = ['nombre', 'ciudad', 'barrio', 'dir', 'tel', 'email', 'talla', 'fecha'];
-            const datos = {};
-            
-            for(let id of campos) {
-                datos[id] = document.getElementById(id).value;
-                if(!datos[id]) return alert("Por favor, completa todos los campos");
-            }
-            
-            const msj = `¡Hola Todo-Calzado!%0AQuiero confirmar mi pedido de los *Jordan Luka 5*:%0A%0A` +
-                        `*Nombre:* ${datos.nombre}%0A` +
-                        `*Ciudad:* ${datos.ciudad}%0A` +
-                        `*Barrio:* ${datos.barrio}%0A` +
-                        `*Dirección:* ${datos.dir}%0A` +
-                        `*Teléfono:* ${datos.tel}%0A` +
-                        `*Email:* ${datos.email}%0A` +
-                        `*Talla:* ${datos.talla}%0A` +
-                        `*Fecha estimada:* ${datos.fecha}`;
+    <div class="info">
+        <h3>JORDAN LUKA 5</h3>
+        <p class="precio">$999.000 COP</p>
+        <p class="pago">PAGO CONTRA ENTREGA</p>
+    </div>
 
-            window.location.href = `https://wa.me/573146742585?text=${msj}`;
-        }
-    </script>
+    <div class="formulario">
+        <h4 style="text-align:center">FORMULARIO DE PEDIDO</h4>
+        <input type="text" placeholder="Nombre completo">
+        <input type="text" placeholder="Ciudad">
+        <input type="text" placeholder="Barrio">
+        <input type="text" placeholder="Dirección exacta">
+        <input type="tel" placeholder="Teléfono (WhatsApp)">
+        <select>
+            <option>Selecciona tu Talla (US)</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+        </select>
+        <button class="btn-finalizar">🚀 FINALIZAR PEDIDO</button>
+    </div>
+</div>
+
+<a href="https://wa.me/573146742585?text=Hola!%20Necesito%20asesoría%20con%20los%20Jordan%20Luka%205" class="btn-whatsapp">
+    💬 Hablar con asesor
+</a>
+
 </body>
 </html>
