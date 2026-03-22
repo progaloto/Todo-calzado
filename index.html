@@ -32,13 +32,19 @@
 
         <form id="orderForm" style="background: #fdfdfd; padding: 15px; border-radius: 10px; border: 1px solid #eee;">
             <p style="text-align: center; font-weight: bold; margin-top: 0;">DATOS DE ENVÍO 🚛</p>
+            
             <input type="text" id="nombre" placeholder="Nombre completo" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
             <input type="text" id="direccion" placeholder="Dirección y Barrio" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
             <input type="tel" id="celular" placeholder="Celular" required style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
 
-            <button type="button" onclick="enviarPedido()" style="width: 100%; background-color: #25d366; color: white; padding: 18px; border: none; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer;">
+            <button type="button" onclick="enviarPedido()" style="width: 100%; background-color: #25d366; color: white; padding: 18px; border: none; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer; margin-bottom: 10px;">
                 ✅ CONFIRMAR PEDIDO
             </button>
+
+            <a href="https://wa.me/573146742585?text=Hola!%20Tengo%20una%20duda%20sobre%20las%20medias%20Stitch" 
+               style="display: block; text-align: center; background-color: #007bff; color: white; padding: 12px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 15px;">
+               💬 CHATEAR CON UN ASESOR
+            </a>
         </form>
     </div>
 
@@ -47,10 +53,13 @@
             const nombre = document.getElementById('nombre').value;
             const direccion = document.getElementById('direccion').value;
             const celular = document.getElementById('celular').value;
+
             if(nombre && direccion && celular) {
                 const mensaje = `¡Nuevo Pedido!%0A%0A🧦 Medias Stitch%0A👤 Nombre: ${nombre}%0A📍 Dirección: ${direccion}%0A📱 Celular: ${celular}%0A💰 Total: $28.000`;
                 window.location.href = `https://wa.me/573146742585?text=${mensaje}`;
-            } else { alert("Completa los datos de envío."); }
+            } else {
+                alert("Por favor, completa los datos de envío.");
+            }
         }
     </script>
 </body>
