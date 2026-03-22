@@ -3,47 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finalizar Pedido | Todo-calzado</title>
+    <title>Pedido Medias Stitch | Todo-calzado</title>
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px;">
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 10px;">
 
     <div style="max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
         
         <header style="text-align: center; border-bottom: 2px solid #eee; padding-bottom: 10px;">
             <h2 style="margin: 0; color: #333;">👟 TODO-CALZADO</h2>
-            <p style="color: #666; font-size: 14px;">Medellín - Envíos a todo el país</p>
+            <p style="color: #666; font-size: 14px;">Medellín - Pago Contra Entrega</p>
         </header>
 
         <div style="text-align: center; margin: 20px 0;">
-            <img src="https://via.placeholder.com/300x200?text=FOTO+DEL+CALZADO" alt="Tenis" style="width: 100%; border-radius: 10px;">
-            <h3 style="margin: 10px 0 5px 0;">Referencia Seleccionada</h3>
-            <p style="font-size: 24px; color: #e63946; font-weight: bold; margin: 0;">$180.000 COP</p>
+            <h3 style="margin: 10px 0 5px 0;">Medias Locas Stitch (Con Orejitas)</h3>
+            <p style="font-size: 26px; color: #e63946; font-weight: bold; margin: 0;">$28.000 COP</p>
+            <p style="color: #555; font-size: 14px; margin-top: 10px; line-height: 1.5;">
+                ✨ <b>Talla:</b> Única (Para niños de 4 a 11 años)<br>
+                👟 <b>Recomendado:</b> Hasta talla de calzado 35<br>
+                ⚠️ <b>Cuidado:</b> Lavar a mano con agua fría únicamente.
+            </p>
         </div>
 
         <form id="orderForm">
-            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Nombre Completo:</label>
-            <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+            <p style="text-align: center; font-weight: bold; color: #333; margin-bottom: 15px;">DATOS PARA TU ENVÍO:</p>
+            
+            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Nombre de quien recibe:</label>
+            <input type="text" id="nombre" placeholder="Nombre completo" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
 
-            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Dirección de Envío:</label>
-            <input type="text" id="direccion" placeholder="Calle, Carrera, Barrio" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Dirección exacta:</label>
+            <input type="text" id="direccion" placeholder="Calle, Carrera, Barrio" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
 
-            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Ciudad:</label>
-            <input type="text" id="ciudad" placeholder="Ej: Medellín" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Ciudad / Municipio:</label>
+            <input type="text" id="ciudad" value="Medellín" required style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
 
             <label style="display: block; margin-bottom: 5px; font-weight: bold;">Celular:</label>
-            <input type="tel" id="celular" placeholder="314..." required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+            <input type="tel" id="celular" placeholder="3xx xxx xxxx" required style="width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
 
-            <button type="button" onclick="enviarPedido()" style="width: 100%; background-color: #25d366; color: white; padding: 15px; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; margin-bottom: 10px;">
-                🚀 CONFIRMAR COMPRA
+            <button type="button" onclick="enviarPedido()" style="width: 100%; background-color: #25d366; color: white; padding: 16px; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; margin-bottom: 10px;">
+                🚀 HACER PEDIDO AHORA
             </button>
         </form>
 
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-
-        <div style="text-align: center;">
-            <p style="color: #666; margin-bottom: 10px;">¿Tienes dudas antes de comprar?</p>
-            <a href="https://wa.me/573146742585?text=Hola!%20Tengo%20una%20duda%20sobre%20los%20tenis%20antes%20de%20comprar" 
-               style="display: block; background-color: #007bff; color: white; padding: 12px; text-decoration: none; border-radius: 10px; font-weight: bold; font-size: 16px;">
+        <div style="text-align: center; margin-top: 15px;">
+            <a href="https://wa.me/573146742585?text=Hola!%20Quiero%20más%20información%20sobre%20las%20medias%20de%20Stitch" 
+               style="display: block; background-color: #007bff; color: white; padding: 12px; text-decoration: none; border-radius: 10px; font-weight: bold; font-size: 15px;">
                💬 CHATEAR CON UN ASESOR
             </a>
         </div>
@@ -55,13 +58,12 @@
             const direccion = document.getElementById('direccion').value;
             const ciudad = document.getElementById('ciudad').value;
             const celular = document.getElementById('celular').value;
-            const precio = "$180.000";
 
             if(nombre && direccion && ciudad && celular) {
-                const mensaje = `Hola Todo-calzado! Quiero comprar los tenis por ${precio}.%0A%0AMis datos:%0A👤 Nombre: ${nombre}%0A📍 Dirección: ${direccion}%0A🏙️ Ciudad: ${ciudad}%0A📱 Celular: ${celular}`;
+                const mensaje = `¡Nuevo Pedido!%0A%0A🧦 Producto: Medias Stitch%0A👤 Nombre: ${nombre}%0A📍 Dirección: ${direccion}%0A🏙️ Ciudad: ${ciudad}%0A📱 Celular: ${celular}%0A💰 Total: $28.000`;
                 window.location.href = `https://wa.me/573146742585?text=${mensaje}`;
             } else {
-                alert("Por favor, llena los datos de envío para continuar.");
+                alert("Por favor, llena los datos de envío para procesar tu pedido.");
             }
         }
     </script>
